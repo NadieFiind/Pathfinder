@@ -1,0 +1,8 @@
+#canvas-container {
+	border: solid 1px black;
+}
+.label {
+	display: block;
+	font-weight: bold;
+	margin: 20px 0px 5px 5px;
+}

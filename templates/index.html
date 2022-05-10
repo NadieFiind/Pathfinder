@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta name="author" content="Nadie Fiind">
+		<meta name="description" content="Pathfinder using Dijkstra's algorithm with p5.js (a JavaScript library).">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<script src="{{ url_for('static', filename='p5/p5.js') }}"></script>
+		<script>
+			let mapImg;
+			function preload() {
+				mapImg = loadImage("{{ file }}");
+			}
+		</script>
+		<script src="{{ url_for('static', filename='node.js') }}"></script>
+		<script src="{{ url_for('static', filename='sketch.js') }}"></script>
+	</head>
+	<body class="container">
+		<header>
+			<h1 class="h3 m-2 text-center">Pathfinder</h1>
+		</header>
+		<main class="row justify-content-center">
+			<div id="canvas-container"></div>
+			<div class="col-12 col-md">
+				<form method="POST" action="/">
+					{{ map_form.hidden_tag() }}
+					{{ map_form.maps.label(class="label") }}
+					{{ map_form.maps(class="input form-control") }}
+					{{ map_form.submit(class="input btn btn-primary m-2") }}
+				</form>
+				<form method="POST" action="/" enctype="multipart/form-data">
+					{{ file_form.hidden_tag() }}
+					{{ file_form.file.label(class="label") }}
+					{{ file_form.file(class="input form-control-file") }}	
+					{{ file_form.submit(class="input btn btn-primary m-2") }}
+				</form>
+			</div>
+		</main>
+	</body>
+</html>
