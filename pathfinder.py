@@ -47,3 +47,8 @@ def index():
 		return "Invalid file format. Must be a transparent png image format."
 	map = map_form.maps.data
 	return render_template("index.html", file=url_for("static", filename=f"maps/{map}.png"), file_form=file_form, map_form=map_form)
+
+
+os.environ["FLASK_ENV"] = "development"
+os.environ["SECRET_KEY"] = "XZr435dsDs"
+app.run(debug=True)
