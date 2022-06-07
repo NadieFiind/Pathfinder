@@ -1,5 +1,5 @@
 # Pathfinder
-> A program that finds the shortest possible path between two points.
+> Path finding algorithm implementation.
 
 Pathfinder uses [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) to determine the shortest possible path between point A and point B.
 The points are randomly generated.
@@ -17,8 +17,6 @@ pipenv run app
 ```
 
 ----
-
-*I accidentally committed environment variables, ehe (ﾉ≧ڡ≦)*
 
 I made this project before because I was a delivery guy. I thought it would be cool if I can determine the shortest path when going to places. (Completely ignoring the existence of Google Maps XD)
 
