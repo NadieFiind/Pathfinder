@@ -41,6 +41,10 @@ def index():
 		file = file_form.file.data
 		filename = secure_filename(file.filename)
 		upload_folder = os.path.join(UPLOAD_FOLDER, filename)
+		
+		if not os.path.exists(UPLOAD_FOLDER):
+			os.makedirs(UPLOAD_FOLDER)
+		
 		file.save(upload_folder)
 		return render_template("index.html", file=url_for("static", filename=os.path.join("maps/uploads", filename)), file_form=file_form, map_form=map_form)
 	elif file_form.file.data:
